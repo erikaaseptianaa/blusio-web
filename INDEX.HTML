@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BLUSIO Health App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f7fa;
+        }
+
+        header {
+            background: #2f80ed;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background: #eaf1fb;
+            padding: 15px;
+        }
+
+        nav button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #2f80ed;
+            color: white;
+        }
+
+        nav button:hover {
+            background: #1c5fd4;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h2 {
+            color: #2f80ed;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>WELCOME BLUSIO</h1>
+        <p>Smart Health Bracelet for Hypertension Care</p>
+    </header>
+
+    <nav>
+        <button onclick="showSection('dashboard')">Dashboard</button>
+        <button onclick="showSection('heart')">Detak Jantung</button>
+        <button onclick="showSection('bp')">Blood Pressure</button>
+        <button onclick="showSection('history')">Riwayat</button>
+    </nav>
+
+    <div class="container">
+
+        <!-- Dashboard -->
+        <div id="dashboard" class="card">
+            <h2>Status Kesehatan</h2>
+            <p><b>Detak Jantung:</b> <span id="hr">78 bpm</span></p>
+            <p><b>Tekanan Darah:</b> <span id="bp">120/80 mmHg</span></p>
+            <p><b>Status:</b> <span style="color:green;">Normal</span></p>
+        </div>
+
+        <!-- Heart Rate -->
+        <div id="heart" class="card hidden">
+            <h2>Detak Jantung</h2>
+            <p>Detak jantung saat ini:</p>
+            <h3>78 bpm</h3>
+        </div>
+
+        <!-- Blood Pressure -->
+        <div id="bp" class="card hidden">
+            <h2>Tekanan Darah</h2>
+            <p>Sistolik / Diastolik</p>
+            <h3>120 / 80 mmHg</h3>
+        </div>
+
+        <!-- History -->
+        <div id="history" class="card hidden">
+            <h2>Riwayat Kesehatan</h2>
+            <table>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Detak Jantung</th>
+                    <th>Tekanan Darah</th>
+                    <th>Status</th>
+                </tr>
+                <tr>
+                    <td>12-12-2025</td>
+                    <td>80 bpm</td>
+                    <td>130/85</td>
+                    <td>Waspada</td>
+                </tr>
+                <tr>
+                    <td>13-12-2025</td>
+                    <td>78 bpm</td>
+                    <td>120/80</td>
+                    <td>Normal</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = ['dashboard', 'heart', 'bp', 'history'];
+            sections.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+
+</body>
+
+</html>
+
+
+</body>
+
+</html>
